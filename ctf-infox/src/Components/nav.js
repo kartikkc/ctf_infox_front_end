@@ -23,7 +23,7 @@ const Navbar = () => {
     <div id="sidenav" class="sidenav">
       <header class="sidenav__header header">
           <span class="header__icon">
-            <img
+            <img className='logo'
               src={require("./Assets/images/aswd.png")}
             />
           </span>

@@ -105,25 +105,13 @@ html {
 	scroll-behavior: smooth;
 }
 
-img {
+.logo {
 	display: block;
 	max-height: 100%;
 	max-width: 100%;
 	margin: 0;
 	height: auto;
 	// vertical-align: top;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p {
-	margin: 0 0 1em;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
@@ -153,18 +141,18 @@ p {
 // 	color: #212121;
 // }
 
-.app {
-	display: flex;
-	flex-flow: row nowrap;
-	resize: both;
-	overflow: hidden;
-	background: #fff;
-	border-radius: $radius;
-	width: 500px;
-	max-width: 100%;
-	min-width: $sidenav-width;
-	box-shadow: rgba(#000, 0.1) 0 7px 29px 0;
-}
+// .app {
+// 	display: flex;
+// 	flex-flow: row nowrap;
+// 	resize: both;
+// 	overflow: hidden;
+// 	background: #fff;
+// 	border-radius: $radius;
+// 	width: 500px;
+// 	max-width: 100%;
+// 	min-width: $sidenav-width;
+// 	box-shadow: rgba(#000, 0.1) 0 7px 29px 0;
+// }
 
 .content {
 	flex: 1;
@@ -183,7 +171,7 @@ p {
 	width: $sidenav-width;
 	max-width: 100%;
 	transition: width $duration $timing;
-	
+	z-index: 10;
 	&.is-collapsed {
 		width: $icon-width + ($sidenav-gutter * 2);
 	}
@@ -246,58 +234,6 @@ p {
 	}
 }
 
-.search {
-	display: flex;
-	flex-flow: row nowrap;
-	position: relative;
-	margin-top: 1rem;
-}
-
-.search__icon {
-	@include icon;
-	position: absolute;
-	right: 0;
-	top: 0;
-	cursor: pointer;
-}
-
-.search__input {
-	flex: 1 1 auto;
-	min-width: 1px;
-	height: $icon-width;
-	border: none;
-	background: $primary-light;
-	border-radius: $radius-sm;
-	color: $text-on-primary;
-	padding: 0 $icon-width 0 1rem;
-	outline-offset: -2px;
-	transition-property: background, color, padding;
-	transition-duration: $duration;
-	
-	&:placeholder {
-		color: $text-light;
-		transition-property: color;
-		transition-duration: $duration;
-	}
-	
-	&:focus {
-		outline: 2px solid rgba(#fff, .3);
-	}
-	
-	.is-collapsed & {
-		color: transparent;
-		padding-left: 0;
-		
-		&:not(:hover) {
-			background: none;
-		}
-		
-		&:placeholder {
-			color: transparent;
-		}
-	}
-}
-
 .sidenav__nav {
 	$offset: $sidenav-gutter - .125rem;
 	flex: 1 1 auto;
@@ -351,19 +287,6 @@ p {
 	margin: 0;
 	padding: 0;
 	min-width: $icon-width;
-}
-
-.nav__divider {
-	margin: 1rem 0;
-	padding: 0 ($icon-width - $icon-size) / 2;
-	min-width: $icon-width;
-	
-	&::before {
-		display: block;
-		content: '';
-		height: .99px;
-		background: $primary-lighter;
-	}
 }
 
 .nav__item {
