@@ -1,13 +1,15 @@
-.bg-home{
-    background-color:blue;
+.bg-home {
+    background-color: blue;
 }
+
 .Title {
     font-size: 6rem;
     letter-spacing: .5em;
     text-transform: uppercase;
     margin: 4rem;
-  }
-  /* .ham-btn {
+}
+
+/* .ham-btn {
     position: fixed;
     right: 30px;
     top: 12px;
@@ -36,7 +38,7 @@
     padding: 10px 0;
 } */
 
-.hero-text .wrap{
+.hero-text .wrap {
     position: absolute;
     right: 0;
     left: 0;
@@ -46,40 +48,47 @@
     z-index: 1;
 
 }
-.wrap{
+
+.wrap {
     height: 100%;
-    min-height: 100vh;
+    min-height: 129vh;
+    min-width: 10vw;
     /* width: calc(100% - 80px); */
-    margin-left: 16%;
+    /* margin-left: 17%; */
+    margin-top: -920px;
     position: relative;
     background: #f4f4f4;
-    
-   
+    z-index: -1;
 }
+
 .wrap .hero-text h1 {
     font-size: 3.5rem;
     font-weight: 5000 !important;
-    font-family: "Alegreya Sans SC",sans-serif;
+    font-family: "Alegreya Sans SC", sans-serif;
     padding-top: 130px;
     text-align: center;
 }
+
 .wrap .hero-text h2 {
     font-size: 2rem;
     margin-top: -44px;
-    font-family: "Alegreya Sans SC",sans-serif;
+    font-family: "Alegreya Sans SC", sans-serif;
     font-weight: bolder;
-    text-align:center;
+    text-align: center;
     padding-top: 47px;
 }
-.wrap .hero-text .reg-btn{
-margin-top: 20px;
-font-size: 1.2rem !important;
-outline: none;
-border-color: #0023ff;
-background-color: #0023ff;
-color: #e8e8e8;
-border-radius: 200px;
+
+.wrap .hero-text .reg-btn {
+    margin-top: 620px;
+    font-size: 1.2rem !important;
+    outline: none;
+    border-color: #0023ff;
+    background-color: #0023ff;
+    color: #e8e8e8;
+    border-radius: 200px;
 }
+
+
 .reg-btn {
     align-items: center;
     margin-left: 44%;
@@ -89,10 +98,13 @@ border-radius: 200px;
     padding-top: 12px;
     padding-bottom: 12px;
     text-transform: uppercase;
-    font-family:monospace;
+    font-family: monospace;
     position: relative;
     overflow: hidden;
+    margin-left: 50%;
+
 }
+
 /* .reg-btn:hover{
     color: #f4f4f4;
 
@@ -111,14 +123,16 @@ border-radius: 200px;
 }
 .reg-btn:hover::before{
     height: 0%;
-} */.over-lap{
-    
+} */
+.over-lap {
+
     position: absolute;
     top: 3.5px;
     padding-left: 412px;
     color: #10a80b;
-    
+
 }
-.h1{
+
+.h1 {
     letter-spacing: 2px;
 }
