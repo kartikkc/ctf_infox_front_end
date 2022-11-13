@@ -11,10 +11,10 @@
 
 }
 
-/* body{
-    
-    background-color: #23242a;
-} */
+body{
+    background: url("../Assets/images/20221113_211818_0000.png");
+    overflow: hidden;
+}
 .parent{
     display: inline-block;
     position: relative;
@@ -44,8 +44,8 @@
     width: 380px;
     height: 420px;
     border-radius: 8px;
-    bottom: 75vh;
-    left: 85vh;
+    bottom: 70vh;
+    left:40vw;
     background-color: aqua;
     /* backdrop-filter: blur(10px); */
     overflow: hidden;

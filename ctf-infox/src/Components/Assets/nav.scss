@@ -160,10 +160,12 @@ html {
 }
 
 .sidenav {
-    height: $sidenav-height;
+    // height: $sidenav-height;
+    height: 99vh;
 	display: flex;
 	flex-flow: column nowrap;
-	background: $primary;
+	// background: $primary;
+	background: rgb(195, 228, 200);
 	color: #fff;
 	padding: $sidenav-gutter;
 	border-radius: $radius;
