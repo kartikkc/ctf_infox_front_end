@@ -20,7 +20,7 @@ const toggle = () => {
 const Navbar = () => {
 
   return (
-    <div id="sidenav" class="sidenav">
+    <div id="sidenav" class="sidenav sticky">
       <header class="sidenav__header header">
           <span class="header__icon">
             <img className='logo'
