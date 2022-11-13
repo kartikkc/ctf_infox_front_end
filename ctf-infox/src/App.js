@@ -16,7 +16,7 @@ const App = () => {
     <>
       <Router>
         <div className="mainDiv">
-          <Navbar />
+          {/* <Navbar /> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="challenges" element={<Challenge />} />
