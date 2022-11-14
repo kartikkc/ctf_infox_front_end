@@ -1,8 +1,7 @@
 /* HTML CSSResult Skip Results Iframe */
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900%display=swap'); */
 
-*
-{
+* {
     font-family: 'Poppins', 'sans-serif';
     box-sizing: border-box;
     margin: 0;
@@ -11,14 +10,24 @@
 
 }
 
+@font-face {
+    font-family: aatmospheric;
+    src: url("./fonts/aAtmospheric.ttf");
+}
+
+.atmosphere {
+    font-family: aatmospheric;
+}
+
 /* body{
     
     background-color: #23242a;
 } */
-.parent{
+.parent {
     display: inline-block;
     position: relative;
 }
+
 /* .body{
     display: inline;
     position: relative;
@@ -99,20 +108,22 @@
     flex-direction: column;
 
 }
+
 .form h2 {
     color: #000000;
     font-weight: 500;
     text-align: center;
-    letter-spacing: 0,1em;
+    letter-spacing: 0, 1em;
 
 }
 
-.inputBox{
+.inputBox {
     position: relative;
     width: 300px;
     margin-top: 35px;
 
 }
+
 .inputBox input {
     position: relative;
     width: 100%;
@@ -126,7 +137,7 @@
     z-index: 10;
 }
 
-.inputBox span{
+.inputBox span {
     position: absolute;
     left: 0;
     padding: 10px 10px 10px;
@@ -137,8 +148,8 @@
     transition: 0.5s;
 }
 
-.inputBox input:valid ~ span, 
-.inputBox input:focus ~ span  {
+.inputBox input:valid~span,
+.inputBox input:focus~span {
     color: #000000;
     transform: translateX(0px) translateY(-34px);
     font-size: 0.75em;
@@ -158,8 +169,8 @@
     z-index: 9;
 }
 
-.inputBox input:valid ~ i, 
-.inputBox input:focus ~ i {
+.inputBox input:valid~i,
+.inputBox input:focus~i {
     height: 44px;
 
 }
@@ -178,11 +189,11 @@
 }
 
 .links a:hover,
-.links a:nth-child(2)
- {
+.links a:nth-child(2) {
     color: #000000;
 
 }
+
 input[type='submit'] {
     border: none;
     outline: none;
