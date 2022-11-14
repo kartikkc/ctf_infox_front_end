@@ -18,11 +18,13 @@
 .atmosphere {
     font-family: aatmospheric;
 }
-
-/* body{
-    
-    background-color: #23242a;
+body{
+    background: url("../Assets/images/20221113_211818_0000.png");
+    overflow: hidden;
+}
+/* #buttonDiv{
 } */
+
 .parent {
     display: inline-block;
     position: relative;
