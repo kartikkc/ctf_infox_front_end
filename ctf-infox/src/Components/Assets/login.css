@@ -15,6 +15,8 @@ body{
     background: url("../Assets/images/20221113_211818_0000.png");
     overflow: hidden;
 }
+/* #buttonDiv{
+} */
 .parent{
     display: inline-block;
     position: relative;
@@ -46,7 +48,8 @@ body{
     border-radius: 8px;
     bottom: 70vh;
     left:40vw;
-    background-color: aqua;
+    background: #C4E7C9;
+    /* background-color: aqua; */
     /* backdrop-filter: blur(10px); */
     overflow: hidden;
     /* z-index: 100; */
