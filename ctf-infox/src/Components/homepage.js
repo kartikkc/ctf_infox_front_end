@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import "./Assets/homepage.css"
 // import "./Assets/images/bg-image.png"
 import Background from "./Assets/images/bg-image.png"
@@ -16,7 +17,9 @@ const Homepage = () => {
           {/* <h1 className='over-lap'>Capture The Flag</h1>
           <h1>Capture The Flag</h1>
           <h2>The choosen one</h2> */}
-          <button href="register.html" class='reg-btn btn-1'>Register</button>
+          <Link to="/login" className="navigation__link">
+          <button class='reg-btn btn-5'>Register</button>
+          </Link> 
         </div>
       </div>
     </>

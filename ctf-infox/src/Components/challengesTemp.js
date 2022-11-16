@@ -4,7 +4,7 @@ import Modal from "./Modal";
 const Challenge = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="overflow-hidden flex flex-row">
+    <div className=" flex flex-row">
       {/* left */}
 
       <div className=" min-h-screen min-w-[40%] bg-gray-50 p-4 ">
