@@ -10,7 +10,7 @@ const Challenge = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [userInput,setUserInput] = useState("")
   const getDetails= async()=>{
-    // const userDetails= await fetch("http://localhost:5500/heck/ctf/getDetails",{
+    // const userDetails= await fetch("https://infox-ctf.herokuapp.com/heck/ctf/getDetails",{
     //   method:"POST",
     //   headers:{
     //     "content-type":"application/json",
@@ -23,7 +23,7 @@ const Challenge = () => {
   }
 
   const sendFlag = async ()=>{
-    const flagRes= await fetch("http://localhost:5500/heck/ctf/add_flag",{
+    const flagRes= await fetch("https://infox-ctf.herokuapp.com/heck/ctf/add_flag",{
       method:"POST",
       headers:{
         "content-type":"application/json",
@@ -33,7 +33,11 @@ const Challenge = () => {
       referrerPolicy:"origin-when-cross-origin"
     })
     const finalFlagRes= await flagRes.json();
-    console.log(finalFlagRes);
+    // console.log(finalFlagRes);
+    if(!finalFlagRes.success)
+    {
+      toast.error(finalFlagRes.error);
+    }
   }
   React.useEffect(()=>{
     if(localStorage.getItem("authKey"))

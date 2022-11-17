@@ -64,7 +64,7 @@ const Navbar = () => {
               </span>
               <span className="nav__label Challenges">Challenges</span>
             </button>
-            <span className="nav__badge">9</span>
+            {/* <span className="nav__badge">9</span> */}
           </li>
           <li className="nav__item" 
             style={{display:`${localStorage.getItem("authKey")? "none": ""}`}}
@@ -80,7 +80,7 @@ const Navbar = () => {
               </span>
               <span className="nav__label Challenges">Login</span>
             </button>
-            <span className="nav__badge warn">99+</span>
+            {/* <span className="nav__badge warn">99+</span> */}
           </li>
         </ul>
       </nav>
