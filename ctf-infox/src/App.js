@@ -1,10 +1,10 @@
 import {
   BrowserRouter as Router,
-  Switch,
+  // Switch,
   Route,
   Routes,
 } from "react-router-dom";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import Navbar from "./Components/nav";
 import Home from "./Components/homepage";
 import Challenge from "./Components/challengesTemp";

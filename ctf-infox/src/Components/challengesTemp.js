@@ -1,8 +1,31 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { useNavigate } from "react-router";
 
 const Challenge = () => {
+  const Navigate=useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
+  const getDetails= async()=>{
+    const userDetails= await fetch("http://localhost:5500/heck/ctf/getDetails",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json",
+        "authToken":localStorage.getItem("authKey")
+      },
+      referrerPolicy:"origin-when-cross-origin"
+    })
+    const finalUserDetails = await userDetails.json();
+    console.log(finalUserDetails);
+  }
+  React.useEffect(()=>{
+    if(localStorage.getItem("authKey"))
+    {
+      getDetails();
+    }
+    else{
+      Navigate('/login');
+    }
+  })
   return (
     <div className=" flex flex-row absolute top-0 left-20">
       {/* left */}
@@ -29,7 +52,7 @@ const Challenge = () => {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-10 h-10"
+              className="w-10 h-10"
             >
               <path
                 stroke-linecap="round"
