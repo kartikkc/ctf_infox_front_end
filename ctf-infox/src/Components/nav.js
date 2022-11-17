@@ -1,12 +1,15 @@
 import React from 'react'
 import "./Assets/nav.scss"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router';
 
+// eslint-disable-next-line
 const expand = () => {
   var element = document.getElementById("sidenav");
   element.classList.remove("is-collapsed");
 }
 
+// eslint-disable-next-line
 const collapse = () => {
   var element = document.getElementById("sidenav");
   element.classList.add("is-collapsed");
@@ -19,67 +22,81 @@ const toggle = () => {
 
 const Navbar = () => {
 
+  const Navigate= useNavigate();
+
   return (
-    <div id="sidenav" class="sidenav">
-      <header class="sidenav__header header">
-          <span class="header__icon">
-            <img
+    <div id="sidenav" className="sidenav sticky">
+      <header className="sidenav__header header">
+          <span className="header__icon">
+            <img className='logo'
               src={require("./Assets/images/aswd.png")}
+              alt=""
             />
           </span>
-        <a class="top-head" href="https:infoxpression.tech" target={"_blank"}>
-          <span class="header__text Challenges">InfoXpression</span>
+        <a className="top-head" href="https:infoxpression.tech" target={"_blank"} rel="noreferrer">
+          <span className="header__text Challenges">InfoXpression</span>
         </a>
-        <button class="sidenav__button" aria-label="Expand" onClick={toggle}>
-          <span class="sidenav__button-icon">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <button className="sidenav__button" aria-label="Expand" onClick={toggle}>
+          <span className="sidenav__button-icon">
+            <i className="fa fa-angle-left" aria-hidden="true"></i>
           </span>
         </button>
       </header>
 
-      <nav class="sidenav__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <button class="nav__button">
-              <span class="nav__icon Challenges">
-                <i class="fa fa-home" aria-hidden="true"></i>
+      <nav className="sidenav__nav nav">
+        <ul className="nav__list">
+          <li className="nav__item">
+            <button className="nav__button" onClick={()=>{
+              Navigate('/')
+            }}>
+              <span className="nav__icon Challenges">
+                <i className="fa fa-home" aria-hidden="true"></i>
               </span>
-              <span class="nav__label Challenges">Home</span>
+              <span className="nav__label Challenges">Home</span>
             </button>
           </li>
-          <li class="nav__item">
-            <button class="nav__button">
-              <span class="nav__icon Challenges">
-                <i class="fa fa-home" aria-hidden="true"></i>
+          <li className="nav__item">
+            <button className="nav__button" onClick={()=>{
+              Navigate('/challenges')
+            }}>
+              <span className="nav__icon Challenges">
+                <i className="fa fa-home" aria-hidden="true"></i>
               </span>
-              <span class="nav__label Challenges">Challenges</span>
+              <span className="nav__label Challenges">Challenges</span>
             </button>
-            <span class="nav__badge">9</span>
+            <span className="nav__badge">9</span>
           </li>
-          <li class="nav__item">
-            <button class="nav__button">
-              <span class="nav__icon Challenges">
-                <i class="fa fa-comments" aria-hidden="true"></i>
+          <li className="nav__item" 
+            style={{display:`${localStorage.getItem("authKey")? "none": ""}`}}
+            >
+            <button className="nav__button"  onClick={()=>{
+              Navigate('/login')
+            }}
+            disabled={localStorage.getItem("authKey")? true: false}
+            hidden={true}
+            >
+              <span className="nav__icon Challenges">
+                <i className="fa fa-comments" aria-hidden="true"></i>
               </span>
-              <span class="nav__label Challenges">Login</span>
+              <span className="nav__label Challenges">Login</span>
             </button>
-            <span class="nav__badge warn">99+</span>
+            <span className="nav__badge warn">99+</span>
           </li>
         </ul>
       </nav>
 
-      <div class="sidenav__footer user">
-        <button class="user__button">
-          <div class="user__badge">
-            <div class="user__image">
-              <i class="fa fa-user" aria-hidden="true"></i>
+      {/* <div className="sidenav__footer user">
+        <button className="user__button">
+          <div className="user__badge">
+            <div className="user__image">
+              <i className="fa fa-user" aria-hidden="true"></i>
             </div>
           </div>
-          <div class="user__text">
-            <span class="user__name Challenges">John Smith</span>
+          <div className="user__text">
+            <span className="user__name Challenges">John Smith</span>
           </div>
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }
