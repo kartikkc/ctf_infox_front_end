@@ -19,7 +19,7 @@ const Login = () => {
     const Navigate= useNavigate()
     const LoginUser= async ()=>{
         const resCheck = await fetch(
-            "http://localhost:5500/heck/ctf/auth/google/chk",
+            "https://infox-ctf.herokuapp.com/heck/ctf/auth/google/chk",
             {
               method: "POST",
               headers: {
@@ -35,7 +35,7 @@ const Login = () => {
                 localStorage.setItem("authKey",checkres.authKey);
                 Navigate('/challenges')
             }
-        const res = await fetch('http://localhost:5500/heck/ctf/auth/google', {
+        const res = await fetch('https://infox-ctf.herokuapp.com/heck/ctf/auth/google', {
             method:"POST",
             headers:{
                 "Content-type":"application/json"
@@ -47,7 +47,7 @@ const Login = () => {
         console.log(finalRes);
         if(finalRes.success)
         {
-            localStorage.set("authKey",finalRes.authKey);
+            localStorage.setItem("authKey",finalRes.authKey);
             Navigate('/challenges');
         }
     }
