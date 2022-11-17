@@ -1,21 +1,39 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 import { useNavigate } from "react-router";
+// import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Challenge = () => {
   const Navigate=useNavigate();
   const [modalOpen, setModalOpen] = useState(false);
+  const [userInput,setUserInput] = useState("")
   const getDetails= async()=>{
-    const userDetails= await fetch("http://localhost:5500/heck/ctf/getDetails",{
+    // const userDetails= await fetch("http://localhost:5500/heck/ctf/getDetails",{
+    //   method:"POST",
+    //   headers:{
+    //     "content-type":"application/json",
+    //     "authToken":localStorage.getItem("authKey")
+    //   },
+    //   referrerPolicy:"origin-when-cross-origin"
+    // })
+    // const finalUserDetails = await userDetails.json();
+    // console.log(finalUserDetails);
+  }
+
+  const sendFlag = async ()=>{
+    const flagRes= await fetch("http://localhost:5500/heck/ctf/add_flag",{
       method:"POST",
       headers:{
         "content-type":"application/json",
         "authToken":localStorage.getItem("authKey")
       },
+      body:JSON.stringify({user_inpt:userInput}),
       referrerPolicy:"origin-when-cross-origin"
     })
-    const finalUserDetails = await userDetails.json();
-    console.log(finalUserDetails);
+    const finalFlagRes= await flagRes.json();
+    console.log(finalFlagRes);
   }
   React.useEffect(()=>{
     if(localStorage.getItem("authKey"))
@@ -28,6 +46,7 @@ const Challenge = () => {
   })
   return (
     <div className=" flex flex-row absolute top-0 left-20">
+      <ToastContainer/>
       {/* left */}
 
       <div className=" min-h-screen min-w-[40%] bg-gray-50 p-4 ">
@@ -50,13 +69,13 @@ const Challenge = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               className="w-10 h-10"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5"
               />
             </svg>
@@ -167,6 +186,14 @@ const Challenge = () => {
                 strokeWidth={1.5}
                 stroke="currentColor"
                 className="w-6 h-6 text-gray-700"
+                onClick={()=>{
+                  if(userInput.length<1)
+                  {
+                    toast.error("Enter a Valid Flag");
+                    return;
+                  }
+                  sendFlag();
+                }}
               >
                 <path
                   strokeLinecap="round"
@@ -178,7 +205,8 @@ const Challenge = () => {
               <input
                 type="text"
                 className="outline-none bg-transparent flex w-full "
-                placeholder="flag{example_flag} "
+                placeholder="flag{example_flag}"
+                onChange={(e)=>{e.preventDefault();setUserInput(e.target.value)}}
               />
             </div>
           </div>
